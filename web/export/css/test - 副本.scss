@@ -1,0 +1,434 @@
+﻿$fontSize:14px;
+$baseColor:#00409a,#b9c0dd,#e80111,#bbc0e0,#ddd;//边框蓝色，虚线颜色，字体红色，内部边框颜色
+
+//div{outline:1px solid red;}
+@mixin wh($width,$height){
+	width:$width;
+	height:$height;
+}
+
+@mixin pd($top,$right,$bottom,$left){
+	padding:$top $right $bottom $left;
+}
+
+@mixin oh(){
+	overflow:hidden;
+}
+
+@mixin fl(){
+	float:left;
+}
+
+@mixin ft($size){
+	font-size:$size
+}
+@mixin lh($num){
+	height:$num;
+	line-height:$num;
+}
+body{
+	font-family: "Microsoft YaHei","微软雅黑";
+}
+.header{
+	@include wh(1135px,100px);
+	@include pd(17px,17px,0,17px);
+	@include oh();
+	.logo{
+		@include fl();
+	}
+	.type{
+		@include fl();
+		@include ft(30px);
+		margin:20px 67px;
+	}
+	.right{
+		@include fl();
+		@include ft(22px);
+		margin:20px 0 0;
+		.top em{
+			color:nth($baseColor,3);
+			font-style:normal;
+			@include ft(28px);
+		}
+		.bottom{
+			margin:5px 0 0;
+			color:nth($baseColor,1);
+			@include ft(16px);
+			@include oh();
+			span{
+				@include fl();
+			}
+			em{
+				font-style:normal;
+				float:right;
+			}
+		}
+	}
+}
+
+.bg-block{
+	background:nth($baseColor,2);
+}
+
+
+.body{
+	@include wh(1135px,auto);
+	border:17px solid nth($baseColor,5);
+	border-top:0 none;
+	@include oh();
+	.top{
+		@include oh();
+		border:2px solid nth($baseColor,1);
+	}
+	.publish-info{
+		//border:2px solid nth($baseColor,1);
+		@include fl();
+		@include wh(512px,auto);
+		@include oh();
+		.no-border{
+			border:0 none;
+		}
+	}
+	.goods-info{
+		border-left:2px solid nth($baseColor,1);
+		//border-left:0 none;
+		@include fl();
+		@include wh(617px,auto);
+		@include oh();
+		.table{
+			list-style:none;
+			padding:0;
+			margin:0;
+		}
+		.table-head{
+			@include lh(40px);
+			//@include oh();
+			div{
+				border-right:2px solid nth($baseColor,1);
+				border-bottom:2px solid nth($baseColor,1);
+				@include oh();
+				@include fl();
+			}
+		}
+		
+		.table-body{
+			@include oh();
+			@include fl();
+			 div{
+				border-right:2px solid nth($baseColor,2);
+				border-bottom:2px solid nth($baseColor,2);
+				text-align:center;
+				text-overflow:ellipsis;
+				white-space:nowrap;
+				@include lh(40px);
+				@include oh();
+				@include fl();
+			}
+		}
+		.table-footer{
+			@include oh();
+			@include fl();
+			margin:-2px 0 0;
+			div{
+				@include lh(42px);
+				@include oh();
+				@include fl();
+				width:307.5px;
+				border-top:2px solid nth($baseColor,1);
+				border-right:2px solid nth($baseColor,1);
+				@extend .bg-block;
+			}
+			.right{
+				border-right:0 none;
+			}
+			.info{
+				width:190px;
+				font-style:normal;
+				text-indent:15px;
+				display:inline-block;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				@include oh();
+				@include fl();
+			}
+		}
+		.chinese{
+			color:#4d4d4d;
+			padding:0 0 0 15px;
+			@include fl();
+		}
+		.split{
+			color:#4d4d4d;
+			@include ft(18px);
+			@include fl();
+		}
+		.english{
+			color:#4d4d4d;
+			@include ft(10px);
+			@include fl();
+		}
+		.column-1{
+			width:120px;
+		}
+		.column-2{
+			width:140px;
+		}
+		.column-3{
+			width:114px;
+		}
+		.column-4{
+			width:121px;
+		}
+		.column-5{
+			width:114px;
+			border-right:0 none !important;
+		}
+	}
+	.receiving-info{
+		border:2px solid nth($baseColor,1);
+		border-top:0 none;
+		@include fl();
+		@include wh(512px,264px);
+		@include oh();
+		.special{
+			height:54px;
+		}
+	}
+	.gathering-info{
+		border:2px solid nth($baseColor,1);
+		border-left:0 none;
+		border-top:0 none;
+		@include fl();
+		@include wh(617px,264px);
+		@include oh();
+		.double-block{
+			@include oh();
+			div{
+				@include lh(40px);
+				@include oh();
+				@include fl();
+				width:307.5px;
+				border-bottom:2px solid nth($baseColor,1);
+				border-right:2px solid nth($baseColor,1);
+			}
+			.right{
+				border-right:0 none;
+			}
+			.info{
+				width:160px;
+				font-style:normal;
+				text-indent:15px;
+				display:inline-block;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				@include oh();
+				@include fl();
+			}
+		}
+		.line-block{
+			@include lh(40px);
+			@include oh();
+			width:100%;
+			border-bottom:2px solid nth($baseColor,1);
+			.info{
+				width:190px;
+				font-style:normal;
+				text-indent:15px;
+				display:inline-block;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				@include oh();
+				@include fl();
+			}
+		}
+		.total{
+			@include oh();
+			line-height:40px;
+			@extend .bg-block;
+			padding:0 0 10px;
+			.money{
+				width:100%;
+				float:right;
+				padding:0 15px 0 0;
+				text-align:right;
+				@include oh();
+				.num{
+					color:nth($baseColor,3);
+					@include ft(34px);
+				}
+				.unit{
+					font-style:normal;
+					@include ft(24px);
+				}
+			}
+		}
+		.chinese{
+			color:#4d4d4d;
+			padding:0 0 0 15px;
+			@include fl();
+		}
+		.split{
+			color:#4d4d4d;
+			@include ft(18px);
+			@include fl();
+		}
+		.english{
+			color:#4d4d4d;
+			@include ft(10px);
+			@include fl();
+		}
+	}
+	.signature-info{
+		border:2px solid nth($baseColor,1);
+		border-top:0 none;
+		width:1131px;
+		@include lh(65px);
+		@include fl();
+		div{
+			@include fl();
+			width:30.67%;
+			padding:0 15px;
+			border-right:2px solid nth($baseColor,1);
+			margin-right:-2px;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			@include oh();
+			&:last-child{
+				border:0 none;
+			}
+		}
+	}
+	.line{
+		@include lh(41px);
+		padding:0 0 0 15px;
+		border-bottom:1px dashed nth($baseColor,2);
+		.chinese{
+			color:#4d4d4d;
+			@include fl();
+		}
+		.split{
+			color:#4d4d4d;
+			@include ft(18px);
+			@include fl();
+		}
+		.english{
+			color:#4d4d4d;
+			@include ft(10px);
+			@include fl();
+		}
+		.info{
+			width:370px;
+			font-style:normal;
+			text-indent:15px;
+			display:inline-block;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			@include oh();
+			@include fl();
+		}
+	}
+	.double{
+		@include oh();
+		@include lh(41px);
+		border-bottom:1px dashed nth($baseColor,2);
+		.left{
+			width:255px;
+			@include fl();
+			.chinese{
+				color:#4d4d4d;
+				padding:0 0 0 15px;
+				@include fl();
+			}
+			.split{
+				color:#4d4d4d;
+				@include ft(18px);
+				@include fl();
+			}
+			.english{
+				color:#4d4d4d;
+				@include ft(10px);
+				@include fl();
+			}
+			.info{
+				width:135px;
+				font-style:normal;
+				text-indent:15px;
+				display:inline-block;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				@include oh();
+				@include fl();
+			}
+		}
+		.right{
+			width:255px;
+			border-left:1px dashed nth($baseColor,2);
+			@include fl();
+			.chinese{
+				color:#4d4d4d;
+				padding:0 0 0 15px;
+				@include fl();
+			}
+			.split{
+				color:#4d4d4d;
+				@include ft(18px);
+				@include fl();
+			}
+			.english{
+				color:#4d4d4d;
+				@include ft(10px);
+				@include fl();
+			}
+			.info{
+				width:155px;
+				font-style:normal;
+				text-indent:15px;
+				display:inline-block;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				@include oh();
+				@include fl();
+			}
+		}
+	}
+	.three{
+		@include oh();
+		@include lh(41px);
+		padding:0 15px;
+		border-bottom:1px dashed nth($baseColor,2);
+		.left,.middle,.right{
+			@include fl();
+			@include oh();
+		}
+		.middle{
+			padding:0 15px;
+		}
+		.chinese{
+			color:#4d4d4d;
+			//padding:0 0 0 10px;
+			@include fl();
+		}
+		.split{
+			color:#4d4d4d;
+			@include ft(18px);
+			@include fl();
+		}
+		.english{
+			color:#4d4d4d;
+			@include ft(10px);
+			@include fl();
+		}
+		.info{
+			width:93px;
+			font-style:normal;
+			display:inline-block;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			text-align:center;
+			@include oh();
+			@include fl();
+		}
+	}
+}
+
+

@@ -1,0 +1,449 @@
+﻿$scale:0.585;
+$fontSize:14px*$scale;
+$baseColor:#00409a,#b9c0dd,#e80111,#bbc0e0,#ddd;//边框蓝色，虚线颜色，字体红色，内部边框颜色
+
+//div{outline:1px*$scale solid red;}
+@mixin wh($width,$height){
+	width:$width;
+	height:$height;
+}
+
+@mixin pd($top,$right,$bottom,$left){
+	padding:$top $right $bottom $left;
+}
+
+@mixin oh(){
+	overflow:hidden;
+}
+
+@mixin fl(){
+	float:left;
+}
+
+@mixin ft($size){
+	font-size:$size
+}
+@mixin lh($num){
+	height:$num;
+	line-height:$num;
+}
+body{
+	font-family: "Microsoft YaHei","微软雅黑";
+	font-size:$fontSize;
+}
+.header{
+	@include wh(1135px*$scale,100px*$scale);
+	@include pd(17px*$scale,17px*$scale,0,17px*$scale);
+	@include oh();
+	.logo{
+		@include fl();
+		width:605px*$scale;
+		img{
+			width:100%;
+		}
+	}
+	.type{
+		// background:red;
+		@include fl();
+		@include ft(30px*$scale);
+		margin:20px*$scale 0px*$scale;
+		width:190px*$scale;
+		text-align:center;
+		@include oh();
+	}
+	.right{
+		// background:green;
+		@include oh();
+		@include fl();
+		@include ft(22px*$scale);
+		margin:20px*$scale 0 0;
+		.top em{
+			color:nth($baseColor,3);
+			font-style:normal;
+			@include ft(28px*$scale);
+		}
+		.bottom{
+			margin:5px*$scale 0 0;
+			color:nth($baseColor,1);
+			@include ft(16px*$scale);
+			@include oh();
+			span{
+				@include fl();
+			}
+			em{
+				font-style:normal;
+				float:right;
+			}
+		}
+	}
+}
+
+.bg-block{
+	background:nth($baseColor,2);
+}
+
+
+.body{
+	@include wh(1135px*$scale,auto);
+	border:17px*$scale solid nth($baseColor,5);
+	border-top:0 none;
+	@include oh();
+	.top{
+		@include oh();
+		border:2px*$scale solid nth($baseColor,1);
+	}
+	.publish-info{
+		//border:2px*$scale solid nth($baseColor,1);
+		@include fl();
+		@include wh(512px*$scale,auto);
+		@include oh();
+		.no-border{
+			border:0 none;
+		}
+	}
+	.goods-info{
+		border-left:2px*$scale solid nth($baseColor,1);
+		//border-left:0 none;
+		@include fl();
+		@include wh(617px*$scale,auto);
+		@include oh();
+		.table{
+			list-style:none;
+			padding:0;
+			margin:0;
+		}
+		.table-head{
+			@include lh(40px*$scale);
+			//@include oh();
+			div{
+				border-right:2px*$scale solid nth($baseColor,1);
+				border-bottom:2px*$scale solid nth($baseColor,1);
+				@include oh();
+				@include fl();
+			}
+		}
+		
+		.table-body{
+			@include oh();
+			@include fl();
+			 div{
+				border-right:2px*$scale solid nth($baseColor,2);
+				border-bottom:2px*$scale solid nth($baseColor,2);
+				text-align:center;
+				text-overflow:ellipsis;
+				white-space:nowrap;
+				@include lh(40px*$scale);
+				@include oh();
+				@include fl();
+			}
+		}
+		.table-footer{
+			@include oh();
+			@include fl();
+			margin:-2px*$scale 0 0;
+			border-top:2px*$scale solid nth($baseColor,1);
+			position:relative;
+			z-index:3;
+			div{
+				@include lh(42px*$scale);
+				@include oh();
+				@include fl();
+				width:307.5px*$scale;
+				//border-top:2px*$scale solid nth($baseColor,1);
+				border-right:2px*$scale solid nth($baseColor,1);
+				@extend .bg-block;
+			}
+			.right{
+				border-right:0 none;
+			}
+			.info{
+				width:150px*$scale;
+				font-style:normal;
+				text-indent:15px*$scale;
+				display:inline-block;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				@include oh();
+				@include fl();
+			}
+		}
+		.chinese{
+			color:#4d4d4d;
+			padding:0 0 0 15px*$scale;
+			@include fl();
+		}
+		.split{
+			color:#4d4d4d;
+			@include ft(18px*$scale);
+			@include fl();
+		}
+		.english{
+			color:#4d4d4d;
+			@include ft(10px*$scale);
+			@include fl();
+		}
+		.column-1{
+			width:120px*$scale;
+		}
+		.column-2{
+			width:140px*$scale;
+		}
+		.column-3{
+			width:114px*$scale;
+		}
+		.column-4{
+			width:121px*$scale;
+		}
+		.column-5{
+			width:114px*$scale;
+			border-right:0 none !important;
+		}
+	}
+	.receiving-info{
+		border:2px*$scale solid nth($baseColor,1);
+		border-top:0 none;
+		@include fl();
+		@include wh(512px*$scale,264px*$scale);
+		@include oh();
+		.special{
+			height:54px*$scale;
+		}
+	}
+	.gathering-info{
+		border:2px*$scale solid nth($baseColor,1);
+		border-left:0 none;
+		border-top:0 none;
+		@include fl();
+		@include wh(617px*$scale,264px*$scale);
+		@include oh();
+		.double-block{
+			@include oh();
+			div{
+				@include lh(40px*$scale);
+				@include oh();
+				@include fl();
+				width:307.5px*$scale;
+				border-bottom:2px*$scale solid nth($baseColor,1);
+				border-right:2px*$scale solid nth($baseColor,1);
+			}
+			.right{
+				border-right:0 none;
+			}
+			.info{
+				width:160px*$scale;
+				font-style:normal;
+				text-indent:15px*$scale;
+				display:inline-block;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				@include oh();
+				@include fl();
+			}
+		}
+		.line-block{
+			@include lh(40px*$scale);
+			@include oh();
+			width:100%;
+			border-bottom:2px*$scale solid nth($baseColor,1);
+			.info{
+				width:450px*$scale;
+				font-style:normal;
+				text-indent:15px*$scale;
+				display:inline-block;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				@include oh();
+				@include fl();
+			}
+		}
+		.total{
+			@include oh();
+			line-height:40px*$scale;
+			@extend .bg-block;
+			height:100%;
+			.money{
+				width:100%;
+				float:right;
+				padding:0 15px*$scale 0 0;
+				text-align:right;
+				@include oh();
+				.num{
+					color:nth($baseColor,3);
+					@include ft(34px*$scale);
+				}
+				.unit{
+					font-style:normal;
+					@include ft(24px*$scale);
+				}
+			}
+		}
+		.chinese{
+			color:#4d4d4d;
+			padding:0 0 0 15px*$scale;
+			@include fl();
+		}
+		.split{
+			color:#4d4d4d;
+			@include ft(18px*$scale);
+			@include fl();
+		}
+		.english{
+			color:#4d4d4d;
+			@include ft(10px*$scale);
+			@include fl();
+		}
+	}
+	.signature-info{
+		border:2px*$scale solid nth($baseColor,1);
+		border-top:0 none;
+		width:1131px*$scale;
+		@include lh(65px*$scale);
+		@include fl();
+		div{
+			@include fl();
+			width:30.67%;
+			padding:0 15px*$scale;
+			border-right:2px*$scale solid nth($baseColor,1);
+			margin-right:-2px*$scale;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			@include oh();
+			&:last-child{
+				border:0 none;
+			}
+		}
+	}
+	.line{
+		@include lh(41px*$scale);
+		padding:0 0 0 15px*$scale;
+		border-bottom:1px*$scale dashed nth($baseColor,2);
+		.chinese{
+			color:#4d4d4d;
+			@include fl();
+		}
+		.split{
+			color:#4d4d4d;
+			@include ft(18px*$scale);
+			@include fl();
+		}
+		.english{
+			color:#4d4d4d;
+			@include ft(10px*$scale);
+			@include fl();
+		}
+		.info{
+			width:370px*$scale;
+			font-style:normal;
+			text-indent:15px*$scale;
+			display:block;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			@include oh();
+			@include fl();
+		}
+	}
+	.double{
+		@include oh();
+		@include lh(41px*$scale);
+		border-bottom:1px*$scale dashed nth($baseColor,2);
+		.left{
+			width:255px*$scale;
+			@include fl();
+			.chinese{
+				color:#4d4d4d;
+				padding:0 0 0 15px*$scale;
+				@include fl();
+			}
+			.split{
+				color:#4d4d4d;
+				@include ft(18px*$scale);
+				@include fl();
+			}
+			.english{
+				color:#4d4d4d;
+				@include ft(10px*$scale);
+				@include fl();
+			}
+			.info{
+				width:135px*$scale;
+				font-style:normal;
+				text-indent:15px*$scale;
+				display:inline-block;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				@include oh();
+				@include fl();
+			}
+		}
+		.right{
+			width:255px*$scale;
+			border-left:1px*$scale dashed nth($baseColor,2);
+			@include fl();
+			.chinese{
+				color:#4d4d4d;
+				padding:0 0 0 15px*$scale;
+				@include fl();
+			}
+			.split{
+				color:#4d4d4d;
+				@include ft(18px*$scale);
+				@include fl();
+			}
+			.english{
+				color:#4d4d4d;
+				@include ft(10px*$scale);
+				@include fl();
+			}
+			.info{
+				width:155px*$scale;
+				font-style:normal;
+				text-indent:15px*$scale;
+				display:inline-block;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				@include oh();
+				@include fl();
+			}
+		}
+	}
+	.three{
+		@include oh();
+		@include lh(41px*$scale);
+		padding:0 15px*$scale;
+		border-bottom:1px*$scale dashed nth($baseColor,2);
+		.left,.middle,.right{
+			@include fl();
+			@include oh();
+		}
+		.middle{
+			padding:0 15px*$scale;
+		}
+		.chinese{
+			color:#4d4d4d;
+			//padding:0 0 0 10px*$scale;
+			@include fl();
+		}
+		.split{
+			color:#4d4d4d;
+			@include ft(18px*$scale);
+			@include fl();
+		}
+		.english{
+			color:#4d4d4d;
+			@include ft(10px*$scale);
+			@include fl();
+		}
+		.info{
+			width:93px*$scale;
+			font-style:normal;
+			display:inline-block;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			text-align:center;
+			@include oh();
+			@include fl();
+		}
+	}
+}
+
+
